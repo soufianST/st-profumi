@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_6vca5YeFQcFUXwUA8bRh7eLYEqHk",
+  "orgId": "team_YiM9kMTlaM3W7dCC6B5ELkf5",
+  "projectName": "st-profumo",
+  "settings": {
+    "createdAt": 1780081147778,
+    "framework": "vite",
+    "devCommand": null,
+    "installCommand": "pnpm install",
+    "buildCommand": "pnpm build",
+    "outputDirectory": "dist",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
