@@ -1097,7 +1097,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     familyIt: "Legnoso Aromatico",
     gender: "Unisex",
     genderIt: "Unisex",
-    sizes: [{ ml: 2, price: 10 }, { ml: 5, price: 25 }, { ml: 10, price: 50 }, { ml: 100, price: 250, full: true }],
+    sizes: [{ ml: 2, price: 10 }, { ml: 5, price: 25 }, { ml: 10, price: 50 }, { ml: 100, price: 265, full: true }],
     description: "A romantic, nomadic fragrance inspired by the free-spirited Romani people. It blends luminous citrus and green pine with warm incense and a deep, earthy amber base.",
     descriptionIt: "Una fragranza romantica e nomade ispirata alla libertà dei Romani. Unisce agrumi luminosi e pino verde a caldo incenso e una profonda base ambrata terrosa.",
     emoji: "🌿",
