@@ -15,10 +15,8 @@ import imgBlackOrchid from "@/assets/fragrances/image_w896_h1200_frag-05-black-o
 import imgErosEdp from "@/assets/fragrances/image_w896_h1200_frag-06-eros-edp.png";
 import imgSauvageEdp from "@/assets/fragrances/image_w896_h1200_frag-06-sauvage.png";
 import imgLibre from "@/assets/fragrances/image_w896_h1200_frag-07-libre.png";
-import imgJazzClub from "@/assets/fragrances/image_w896_h1200_frag-08-jazz-club.png";
 import imgLostCherry from "@/assets/fragrances/image_w896_h1200_frag-09-lost-cherry.png";
 import imgInterlude from "@/assets/fragrances/image_w896_h1200_frag-10-interlude.png";
-import imgOudIspahan from "@/assets/fragrances/image_w896_h1200_frag-11-oud-ispahan.png";
 import imgNaxos from "@/assets/fragrances/image_w896_h1200_frag-12-naxos.png";
 import imgBlackAoud from "@/assets/fragrances/image_w896_h1200_frag-13-black-aoud.png";
 import imgDelina from "@/assets/fragrances/image_w896_h1200_frag-14-delina.png";
@@ -262,7 +260,7 @@ const TRANSLATIONS: Record<Lang, Translation> = {
     addToCart: "Add to Cart",
     added: "✓ Added",
     enter: "ENTER",
-    footer: "© 2025 ST PROFUMI · Authentic luxury decants · ",
+    footer: "© 2026 ST PROFUMI · Authentic luxury decants · ",
     guideItems: [
       {
         title: "What is a Decant?",
@@ -372,7 +370,7 @@ const TRANSLATIONS: Record<Lang, Translation> = {
     addToCart: "Aggiungi al Carrello",
     added: "✓ Aggiunto",
     enter: "ENTRA",
-    footer: "© 2025 ST PROFUMI · Decant di lusso autentici · ",
+    footer: "© 2026 ST PROFUMI · Decant di lusso autentici · ",
     guideItems: [
       {
         title: "Cos'è un Decant?",
@@ -429,7 +427,7 @@ const FRAGRANCES = [
     familyIt: "Legnoso Orientale",
     gender: "Unisex",
     genderIt: "Unisex",
-    sizes: [{ ml: 2, price: 12 }, { ml: 5, price: 29 }, { ml: 10, price: 58 }, { ml: 50, price: 290, full: true }],
+    sizes: [{ ml: 2, price: 14 }, { ml: 5, price: 34 }, { ml: 10, price: 64 }, { ml: 50, price: 290, full: true }],
     description: "A pioneer in modern woody scents, this fragrance masterfully blends rare oud with exotic spices and smooth woods to create a sophisticated, clean, and luxurious aroma.",
     descriptionIt: "Pioniere nelle fragranze legnose moderne, questo profumo unisce oud raro, spezie esotiche e legni morbidi per un aroma sofisticato, pulito e lussuoso.",
     badge: "Exclusive",
@@ -467,7 +465,7 @@ const FRAGRANCES = [
     familyIt: "Orientale Gourmand",
     gender: "Unisex",
     genderIt: "Unisex",
-    sizes: [{ ml: 2, price: 15 }, { ml: 5, price: 37 }, { ml: 10, price: 75 }, { ml: 50, price: 375, full: true }],
+    sizes: [{ ml: 2, price: 18 }, { ml: 5, price: 44 }, { ml: 10, price: 75 }, { ml: 50, price: 375, full: true }],
     description: "This opulent fragrance reinvents the classic tobacco scent by blending it with creamy tonka bean, vanilla, and cocoa to create a modern and heady impression of an exclusive English gentlemen's club.",
     descriptionIt: "Questa fragranza opulenta reinventa il classico profumo di tabacco unendolo a tonka cremosa, vaniglia e cacao, per evocare l’atmosfera moderna e avvolgente di un esclusivo gentlemen’s club inglese.",
     badge: "Cult",
@@ -753,7 +751,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     familyIt: "\u2014",
     gender: "Unisex",
     genderIt: "Unisex",
-    sizes: [{ ml:  2, price:  13 }, { ml:  5, price:  33 }, { ml:  10, price:  65 }, { ml:  50, price:  325, full:  true }],
+    sizes: [{ ml:  2, price:  16 }, { ml:  5, price:  39 }, { ml:  10, price:  75 }, { ml:  50, price:  325, full:  true }],
     description: "Inspired by the sweetness of marshmallow, this fragrance is a lush treat for connoisseurs that opens like a shy kiss and unfolds into a seductive, sugar-coated floral intensity.",
     descriptionIt: "Ispirata alla dolcezza del marshmallow, questa fragranza è un piacere raffinato che si apre come un bacio timido e si trasforma in un’intensa esplosione floreale zuccherata e seducente.",
     emoji: "\ud83c\udf6c",
