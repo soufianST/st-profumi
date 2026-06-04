@@ -1,8 +1,10 @@
 -- ST PROFUMI (Stripe) - Supabase Schema
 -- انسخ هذا الملف بالكامل إلى Supabase → SQL Editor ثم Run
 
+-- Extensions
 create extension if not exists "pgcrypto";
 
+-- Tables
 create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   email text,
@@ -53,26 +55,43 @@ alter table public.profiles enable row level security;
 alter table public.addresses enable row level security;
 alter table public.orders enable row level security;
 
+-- Policies (Supabase SQL لا يدعم: CREATE POLICY IF NOT EXISTS)
+-- لذلك نستعمل DROP POLICY IF EXISTS ثم CREATE POLICY.
+
 -- Profiles: user can read/write own
-create policy if not exists "profiles_select_own" on public.profiles
-for select using (auth.uid() = id);
-create policy if not exists "profiles_update_own" on public.profiles
-for update using (auth.uid() = id);
-create policy if not exists "profiles_insert_own" on public.profiles
-for insert with check (auth.uid() = id);
+DROP POLICY IF EXISTS profiles_select_own ON public.profiles;
+CREATE POLICY profiles_select_own ON public.profiles
+FOR SELECT USING (auth.uid() = id);
+
+DROP POLICY IF EXISTS profiles_update_own ON public.profiles;
+CREATE POLICY profiles_update_own ON public.profiles
+FOR UPDATE USING (auth.uid() = id);
+
+DROP POLICY IF EXISTS profiles_insert_own ON public.profiles;
+CREATE POLICY profiles_insert_own ON public.profiles
+FOR INSERT WITH CHECK (auth.uid() = id);
 
 -- Addresses: user can CRUD own
-create policy if not exists "addresses_select_own" on public.addresses
-for select using (auth.uid() = user_id);
-create policy if not exists "addresses_insert_own" on public.addresses
-for insert with check (auth.uid() = user_id);
-create policy if not exists "addresses_update_own" on public.addresses
-for update using (auth.uid() = user_id);
-create policy if not exists "addresses_delete_own" on public.addresses
-for delete using (auth.uid() = user_id);
+DROP POLICY IF EXISTS addresses_select_own ON public.addresses;
+CREATE POLICY addresses_select_own ON public.addresses
+FOR SELECT USING (auth.uid() = user_id);
+
+DROP POLICY IF EXISTS addresses_insert_own ON public.addresses;
+CREATE POLICY addresses_insert_own ON public.addresses
+FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+DROP POLICY IF EXISTS addresses_update_own ON public.addresses;
+CREATE POLICY addresses_update_own ON public.addresses
+FOR UPDATE USING (auth.uid() = user_id);
+
+DROP POLICY IF EXISTS addresses_delete_own ON public.addresses;
+CREATE POLICY addresses_delete_own ON public.addresses
+FOR DELETE USING (auth.uid() = user_id);
 
 -- Orders: user can read own (admin panel reads via service_role on backend)
-create policy if not exists "orders_select_own" on public.orders
-for select using (auth.uid() = user_id);
+DROP POLICY IF EXISTS orders_select_own ON public.orders;
+CREATE POLICY orders_select_own ON public.orders
+FOR SELECT USING (auth.uid() = user_id);
 
+-- Helpful index
 create index if not exists orders_user_id_created_at_idx on public.orders(user_id, created_at desc);
