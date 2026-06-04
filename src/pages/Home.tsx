@@ -1850,7 +1850,15 @@ export default function Home() {
     country: "IT",
   });
 
-  const isAdmin = (session?.user?.email || "") === "tamimisoufian19@gmail.com";
+  const isAdminEmails = new Set(
+    String((import.meta as any).env?.VITE_ADMIN_EMAILS || "")
+      .split(",")
+      .map((s: string) => s.trim().toLowerCase())
+      .filter(Boolean)
+  );
+  // إذا لم تُحدد VITE_ADMIN_EMAILS، لا نفعل لوحة الإدارة
+  const isAdmin =
+    isAdminEmails.size > 0 && isAdminEmails.has(String(session?.user?.email || "").trim().toLowerCase());
 
   useEffect(() => {
     if (!supabaseReady) return;
