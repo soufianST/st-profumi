@@ -1822,7 +1822,11 @@ export default function Home() {
 
   const [lang, setLang] = useState<Lang>("it");
 
-  const supabaseReady = Boolean((import.meta as any).env?.VITE_SUPABASE_URL && (import.meta as any).env?.VITE_SUPABASE_ANON_KEY);
+  const runtimeSupabase = (typeof window !== "undefined" ? (window as any).__ST_PROFUMI__ : undefined) || {};
+  const supabaseReady = Boolean(
+    (runtimeSupabase.SUPABASE_URL && runtimeSupabase.SUPABASE_ANON_KEY) ||
+      ((import.meta as any).env?.VITE_SUPABASE_URL && (import.meta as any).env?.VITE_SUPABASE_ANON_KEY)
+  );
   const [session, setSession] = useState<any>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authPass, setAuthPass] = useState("");
