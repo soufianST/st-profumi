@@ -2395,10 +2395,8 @@ const BASE_ORDERS = 458;
             <span
               style={{
                 color: "#c9a96e",
-                display: "inline-block",
-                verticalAlign: "baseline",
-                position: "relative",
-                top: isMobile ? 0 : -4,
+                display: "inline",
+                verticalAlign: "middle",
               }}
             >
               €3
