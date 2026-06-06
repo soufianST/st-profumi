@@ -596,7 +596,7 @@ function calculateSampleDiscount(items: CartItem[]) {
   for (const item of items) {
     if (!isDiscountableSample(item)) continue;
 
-    const sizeKey = String(item.ml);
+    const sizeKey = `${item.id}-${item.ml}`;
     const unitPrice = Number(item.price);
     if (!Number.isFinite(unitPrice) || unitPrice <= 0) continue;
 
