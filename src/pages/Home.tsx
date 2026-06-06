@@ -2406,7 +2406,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: isMobile ? 24 : 52, marginTop: 44 }}>
-            {[[t.trust1, "🔬"], [t.trust2, "📦"], [t.trust3, "⭐"]].map(([label, icon]) => (
+            {[[{[[t.trust1, "🔬"], [t.trust2, "📦"], [`4.9/5 · ${orderCountDisplay} ${lang === "it" ? "ordini" : "orders"}`, "⭐"]].map(]].map(([label, icon]) => (
               <div key={label as string} style={{ textAlign: "center" }}>
                 <div style={{ fontSize: isMobile ? 20 : 22 }}>{icon as string}</div>
                 <div style={{ fontSize: 10, color: "#cfcfcf", marginTop: 6, letterSpacing: 0.8, maxWidth: 110, lineHeight: 1.35, fontWeight: 700 }}>{label as string}</div>
