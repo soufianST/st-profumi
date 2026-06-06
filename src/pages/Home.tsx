@@ -2035,7 +2035,39 @@ export default function Home() {
   }, [isThankYou, isReceived]);
   const [scrolled, setScrolled] = useState(false);
   const [genderFilter, setGenderFilter] = useState("All");
+const BASE_ORDERS = 458;
+  const [orderCount, setOrderCount] = useState<number>(() => {
+    try {
+      const stored = localStorage.getItem("st_order_count");
+      return stored ? parseInt(stored, 10) : BASE_ORDERS;
+    } catch { return BASE_ORDERS; }
+  });
+  const [orderCountDisplay, setOrderCountDisplay] = useState(orderCount);
 
+  useEffect(() => {
+    if (!isReceived) return;
+    const key = "st_last_received_route";
+    const lastRoute = sessionStorage.getItem(key) || "";
+    if (lastRoute === route) return;
+    sessionStorage.setItem(key, route);
+    const newCount = orderCount + 1;
+    setOrderCount(newCount);
+    try { localStorage.setItem("st_order_count", String(newCount)); } catch {}
+  }, [isReceived, route]);
+
+  useEffect(() => {
+    if (orderCountDisplay === orderCount) return;
+    const start = orderCountDisplay;
+    const end = orderCount;
+    const steps = Math.abs(end - start);
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      setOrderCountDisplay(start + Math.round((step / steps) * (end - start)));
+      if (step >= steps) clearInterval(timer);
+    }, 40);
+    return () => clearInterval(timer);
+  }, [orderCount]);
   const t = TRANSLATIONS[lang];
 
   useEffect(() => {
