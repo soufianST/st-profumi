@@ -2391,16 +2391,7 @@ const BASE_ORDERS = 458;
             <br />
             <span style={{ background: "linear-gradient(135deg,#c9a96e,#e8c87a,#c9a96e)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontStyle: "italic" }}>{t.heroTitle2}</span>
             <br />
-            {t.heroTitle3}{" "}
-            <span
-              style={{
-                color: "#c9a96e",
-                display: "inline",
-                verticalAlign: "middle",
-              }}
-            >
-              €3
-            </span>
+            {t.heroTitle3}{" "}<span style={{ color: "#c9a96e" }}>€3</span>
           </h1>
 
           <p style={{ color: "#888", maxWidth: 460, margin: "0 auto 16px", lineHeight: 1.9, fontSize: isMobile ? 13 : 14 }}>{t.heroDesc}</p>
