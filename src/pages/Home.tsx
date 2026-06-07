@@ -859,7 +859,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     familyIt: "\u2014",
     gender: "Unisex",
     genderIt: "Unisex",
-    sizes: [{ ml:  2, price:  17 }, { ml:  5, price:  35 }, { ml:  10, price:  75 }, { ml:  50, price:  185, full:  true }],
+    sizes: [{ ml:  2, price:  16 }, { ml:  5, price:  38 }, { ml:  10, price:  79 }, { ml:  50, price:  250, full:  true }],
     description: "Inspired by the legendary cognac heritage of Kilian Hennessy, this intoxicating blend evokes the ethereal 'angels' share' through a sophisticated mixture of liquor, spice, and warm woods.",
     descriptionIt: "Ispirato alla leggendaria eredità del cognac Kilian Hennessy, questo blend avvolgente unisce liquore, spezie e caldi legni per evocare la magica 'parte degli angeli'.",
     emoji: "\ud83e\udd43",
