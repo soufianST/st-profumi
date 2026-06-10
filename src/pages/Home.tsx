@@ -1988,7 +1988,7 @@ function FragranceCard({
         transition: "all 0.3s",
         display: "flex",
         flexDirection: "column",
-        height: "100%",
+        alignSelf: "start",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.border = "1px solid #c9a96e33";
@@ -2100,7 +2100,7 @@ function FragranceCard({
       </div>
 
       <div style={{ padding: isMobile ? "12px 12px 14px" : "14px 16px 16px", display: "flex", flexDirection: "column", flex: 1 }}>
-        <div style={{ marginBottom: 6 }}>
+        <div style={{ marginBottom: 6, minHeight: isMobile ? 52 : 62 }}>
           <div style={{ fontSize: 9, color: "#c9a96e88", letterSpacing: 3, textTransform: "uppercase", marginBottom: 2, fontWeight: 600 }}>{frag.house}</div>
           <div style={{ fontSize: isMobile ? 15 : 18, fontWeight: 700, color: "#f0ece4", fontFamily: "Georgia,serif", lineHeight: 1.15 }}>{frag.name}</div>
           <div style={{ fontSize: 10, color: "#555", marginTop: 2 }}>{lang === "it" ? frag.familyIt : frag.family}</div>
@@ -3054,9 +3054,11 @@ const BASE_ORDERS = 458;
                   </div>
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols},minmax(0,1fr))`, columnGap: isMobile ? 10 : isTablet ? 16 : 20, rowGap: isMobile ? 10 : isTablet ? 16 : 20, alignItems: "stretch" }}>
+              <div style={{ columns: cols, columnGap: isMobile ? 10 : isTablet ? 16 : 20 }}>
                 {filtered.map((f) => (
+                  <div key={f.id} style={{ breakInside: "avoid", marginBottom: isMobile ? 10 : isTablet ? 16 : 20 }}>
                   <FragranceCard key={f.id} frag={f} onAdd={addToCart} cart={cart} cols={cols} lang={lang} />
+                  </div>
                 ))}
               </div>
             </>
