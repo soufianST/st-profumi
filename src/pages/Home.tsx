@@ -3054,10 +3054,12 @@ const BASE_ORDERS = 458;
                   </div>
                 </div>
               </div>
-              <div style={{ columns: cols, columnGap: isMobile ? 10 : isTablet ? 16 : 20 }}>
-                {filtered.map((f) => (
-                  <div key={f.id} style={{ breakInside: "avoid", marginBottom: isMobile ? 10 : isTablet ? 16 : 20 }}>
-                  <FragranceCard key={f.id} frag={f} onAdd={addToCart} cart={cart} cols={cols} lang={lang} />
+              <div style={{ display: "flex", gap: isMobile ? 10 : isTablet ? 16 : 20, alignItems: "flex-start" }}>
+                {Array.from({ length: cols }).map((_, colIndex) => (
+                  <div key={colIndex} style={{ flex: 1, display: "flex", flexDirection: "column", gap: isMobile ? 10 : isTablet ? 16 : 20 }}>
+                    {filtered.filter((_, i) => i % cols === colIndex).map((f) => (
+                      <FragranceCard key={f.id} frag={f} onAdd={addToCart} cart={cart} cols={cols} lang={lang} />
+                    ))}
                   </div>
                 ))}
               </div>
