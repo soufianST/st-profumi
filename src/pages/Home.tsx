@@ -56,7 +56,38 @@ import imgBaccaratRouge540Extrait from "@/assets/fragrances/image_w896_h1200_fra
 import imgMonGuerlain from "@/assets/fragrances/image_w896_h1200_frag-40-mon-guerlain.png";
 import imgCoralFantasy from "@/assets/fragrances/image_w896_h1200_frag-41-uomo-born-in-roma-coral-fantasy.png";
 // New fragrances added
-const imgNewFrag = "https://placehold.co/896x1200/0a0a0a/c9a96e?text=";
+import imgFrag43 from "@/assets/fragrances/image_w896_h1200_frag-43-erba-gold.png";
+import imgFrag44 from "@/assets/fragrances/image_w896_h1200_frag-44-le-beau-le-parfum.png";
+import imgFrag45 from "@/assets/fragrances/image_w896_h1200_frag-45-stronger-intensely.png";
+import imgFrag46 from "@/assets/fragrances/image_w896_h1200_frag-46-le-male-le-parfum.png";
+import imgFrag47 from "@/assets/fragrances/image_w896_h1200_frag-47-le-male-elixir.png";
+import imgFrag48 from "@/assets/fragrances/image_w896_h1200_frag-48-club-de-nuit.png";
+import imgFrag49 from "@/assets/fragrances/image_w896_h1200_frag-49-stronger-absolutely.png";
+import imgFrag50 from "@/assets/fragrances/image_w896_h1200_frag-50-azzaro-most-wanted.png";
+import imgFrag51 from "@/assets/fragrances/image_w896_h1200_frag-51-le-beau-paradise-garden.png";
+import imgFrag52 from "@/assets/fragrances/image_w896_h1200_frag-52-ultra-male.png";
+import imgFrag53 from "@/assets/fragrances/image_w896_h1200_frag-53-valentino-uomo-intense.png";
+import imgFrag54 from "@/assets/fragrances/image_w896_h1200_frag-54-le-beau-intense.png";
+import imgFrag55 from "@/assets/fragrances/image_w896_h1200_frag-55-spicebomb-extreme.png";
+import imgFrag56 from "@/assets/fragrances/image_w896_h1200_frag-56-ombre-leather.png";
+import imgFrag57 from "@/assets/fragrances/image_w896_h1200_frag-57-imagination.png";
+import imgFrag58 from "@/assets/fragrances/image_w896_h1200_frag-58-hacivat.png";
+import imgFrag59 from "@/assets/fragrances/image_w896_h1200_frag-59-afternoon-swim.png";
+import imgFrag60 from "@/assets/fragrances/image_w896_h1200_frag-60-you-powerfully.png";
+import imgFrag61 from "@/assets/fragrances/image_w896_h1200_frag-61-grand-soir.png";
+import imgFrag62 from "@/assets/fragrances/image_w896_h1200_frag-62-oud-maracuja.png";
+import imgFrag63 from "@/assets/fragrances/image_w896_h1200_frag-63-oud-zarian.png";
+import imgFrag64 from "@/assets/fragrances/image_w896_h1200_frag-64-black-phantom.png";
+import imgFrag66 from "@/assets/fragrances/image_w896_h1200_frag-66-coeur-battant.png";
+import imgFrag67 from "@/assets/fragrances/image_w896_h1200_frag-67-orage.png";
+import imgFrag68 from "@/assets/fragrances/image_w896_h1200_frag-68-meteore.png";
+import imgFrag69 from "@/assets/fragrances/image_w896_h1200_frag-69-richwood.png";
+import imgFrag70 from "@/assets/fragrances/image_w896_h1200_frag-70-opera.png";
+import imgFrag71 from "@/assets/fragrances/image_w896_h1200_frag-71-more-than-words.png";
+import imgFrag72 from "@/assets/fragrances/image_w896_h1200_frag-72-soprano.png";
+import imgFrag73 from "@/assets/fragrances/image_w896_h1200_frag-73-capitale.png";
+import imgFrag74 from "@/assets/fragrances/image_w896_h1200_frag-74-acqua-di-gio-profondo.png";
+
 
 // Kit images (collages)
 import kitIconeUomo from "@/assets/kits/kit-icone-uomo.png";
@@ -1268,7 +1299,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un capolavoro orientale dorato di una delle più antiche maison profumiere arabe. Intreccia freschezza citrica, cuore floreale lussureggiante e una ricca base di oud resinoso.",
     badge: "Niche",
     emoji: "🌿",
-    image: `${imgNewFrag}Erba+Gold`,
+    image: imgFrag43,
     rating: 4.8,
     reviews: 142,
   },
@@ -1286,7 +1317,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A sun-drenched masculine fragrance capturing the essence of Mediterranean paradise. Vibrant citrus and creamy coconut meet an elegant jasmine heart, grounded by a warm, sensual benzoin base.",
     descriptionIt: "Una fragranza maschile assolata che cattura l'essenza del paradiso mediterraneo. Agrumi vivaci e cocco cremoso incontrano un elegante cuore di gelsomino.",
     emoji: "🌊",
-    image: `${imgNewFrag}Le+Beau+Le+Parfum`,
+    image: imgFrag44,
     rating: 4.6,
     reviews: 318,
   },
@@ -1305,7 +1336,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una fragranza maschile audace e seducente che si apre con castagna speziata e pepe rosa, portando a un cuore caldo di vaniglia e caramello.",
     badge: "Bestseller",
     emoji: "🔥",
-    image: `${imgNewFrag}Stronger+Intensely`,
+    image: imgFrag45,
     rating: 4.7,
     reviews: 562,
   },
@@ -1323,7 +1354,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "The darkest, most intense chapter of the Le Male saga. A deep, opulent masculine fragrance that deepens the iconic lavender-vanilla DNA with rich Bourbon vanilla and smooth sandalwood.",
     descriptionIt: "Il capitolo più scuro e intenso della saga Le Male. Una fragranza maschile opulenta che approfondisce il DNA iconico lavanda-vaniglia con ricca vaniglia Bourbon.",
     emoji: "⚓",
-    image: `${imgNewFrag}Le+Male+Le+Parfum`,
+    image: imgFrag46,
     rating: 4.7,
     reviews: 445,
   },
@@ -1342,7 +1373,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "L'interpretazione più preziosa di Le Male. Un elisir di iris speziato e miele si dispiega su una base ambrata-vanigliata profondamente sensuale.",
     badge: "Exclusive",
     emoji: "✨",
-    image: `${imgNewFrag}Le+Male+Elixir`,
+    image: imgFrag47,
     rating: 4.8,
     reviews: 287,
   },
@@ -1361,7 +1392,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un powerhouse ispirato ad Aventus che offre ananas fresco, betulla affumicata e ambra grigia a un prezzo accessibile. Leggendaria performance.",
     badge: "Cult",
     emoji: "🍍",
-    image: `${imgNewFrag}Club+de+Nuit`,
+    image: imgFrag48,
     rating: 4.6,
     reviews: 892,
   },
@@ -1379,7 +1410,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "The absolute pinnacle of the Stronger with You collection. Rich coffee and pepper meet an addictive leather-vanilla depth — bold, sophisticated, and utterly captivating.",
     descriptionIt: "Il vertice assoluto della collezione Stronger with You. Caffè ricco e pepe incontrano una profondità cuoio-vaniglia irresistibile.",
     emoji: "💪",
-    image: `${imgNewFrag}Stronger+Absolutely`,
+    image: imgFrag49,
     rating: 4.7,
     reviews: 334,
   },
@@ -1397,7 +1428,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A smooth and irresistible masculine fragrance that layers warm spices of cardamom and cinnamon with a suave leather heart and a creamy vanilla-tonka base. Charming, confident, and highly wearable.",
     descriptionIt: "Una fragranza maschile liscia e irresistibile che unisce spezie calde di cardamomo e cannella a un cuore di cuoio e una base cremosa di vaniglia.",
     emoji: "🎯",
-    image: `${imgNewFrag}Most+Wanted`,
+    image: imgFrag50,
     rating: 4.6,
     reviews: 478,
   },
@@ -1415,7 +1446,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A tropical paradise in a bottle. Le Beau Paradise Garden explodes with sun-kissed citrus and coconut before surrendering to an exotic white floral heart — a sensory escape to an idyllic garden.",
     descriptionIt: "Un paradiso tropicale in un flacone. Esplode con agrumi e cocco baciati dal sole prima di cedere a un esotico cuore di fiori bianchi.",
     emoji: "🌺",
-    image: `${imgNewFrag}Le+Beau+Paradise`,
+    image: imgFrag51,
     rating: 4.5,
     reviews: 256,
   },
@@ -1433,7 +1464,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A sweeter, more seductive cousin to Le Male. Ultra Male leads with juicy pear and spiced lavender, then unfolds into a rich heart of vanilla and liquorice — impossibly addictive and crowd-pleasing.",
     descriptionIt: "Un cugino più dolce e seducente di Le Male. Si apre con pera succosa e lavanda speziata, poi si dispiega in un ricco cuore di vaniglia e liquirizia.",
     emoji: "🍐",
-    image: `${imgNewFrag}Ultra+Male`,
+    image: imgFrag52,
     rating: 4.6,
     reviews: 534,
   },
@@ -1451,7 +1482,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A darkly sophisticated Italian masculine fragrance. Uomo Intense layers rich coffee and tobacco with a deep leather and amber base — a statement of refined, modern masculinity inspired by the Valentino Couture House.",
     descriptionIt: "Una fragranza maschile italiana sofisticata e scura. Stratifica caffè ricco e tabacco con una profonda base di cuoio e ambra.",
     emoji: "☕",
-    image: `${imgNewFrag}Uomo+Intense`,
+    image: imgFrag53,
     rating: 4.6,
     reviews: 367,
   },
@@ -1469,7 +1500,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "The intense, deeper version of Le Beau Le Parfum. Amplified coconut and citrus intensity leads to a richer amber-benzoin base — warmer, denser, and even more magnetic than the original.",
     descriptionIt: "La versione intensa di Le Beau Le Parfum. Cocco e agrumi amplificati conducono a una più ricca base ambra-benzoino.",
     emoji: "🌞",
-    image: `${imgNewFrag}Le+Beau+Intense`,
+    image: imgFrag54,
     rating: 4.7,
     reviews: 198,
   },
@@ -1487,7 +1518,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "An explosive masculine fragrance that detonates with black pepper and cinnamon before revealing a rich, smoky tobacco and leather core — dark, powerful, and devastatingly alluring.",
     descriptionIt: "Una fragranza maschile esplosiva che detona con pepe nero e cannella prima di rivelare un ricco nucleo di tabacco affumicato e cuoio.",
     emoji: "💣",
-    image: `${imgNewFrag}Spicebomb+Extreme`,
+    image: imgFrag55,
     rating: 4.7,
     reviews: 621,
   },
@@ -1506,7 +1537,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un audace viaggio sensoriale attraverso il West americano. Cuoio ricco e lucidato è addolcito da gelsomino floreale e patchouli terroso.",
     badge: "Exclusive",
     emoji: "🤠",
-    image: `${imgNewFrag}Ombre+Leather`,
+    image: imgFrag56,
     rating: 4.8,
     reviews: 312,
   },
@@ -1525,7 +1556,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un eau de parfum luminoso e moderno dalla collezione iconica di Louis Vuitton. Agrumi brillanti e pepe rosa danzano su un cuore di iris fresco.",
     badge: "Luxury",
     emoji: "✈️",
-    image: `${imgNewFrag}Imagination+LV`,
+    image: imgFrag57,
     rating: 4.7,
     reviews: 189,
   },
@@ -1544,7 +1575,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un capolavoro niche turco. Ananas tropicale fresco e pompelmo evolvono in una sofisticata base legnosa-muschiata.",
     badge: "Niche",
     emoji: "🎭",
-    image: `${imgNewFrag}Hacivat`,
+    image: imgFrag58,
     rating: 4.9,
     reviews: 678,
   },
@@ -1563,7 +1594,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "L'essenza di un pomeriggio assolato a bordo piscina. Radioso calore — agrumi brillanti cedono a un cuore cremoso floreale-cocco.",
     badge: "Luxury",
     emoji: "🏊",
-    image: `${imgNewFrag}Afternoon+Swim`,
+    image: imgFrag59,
     rating: 4.7,
     reviews: 221,
   },
@@ -1581,7 +1612,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     description: "A confident and radiant feminine fragrance. Fresh pear and citrus open to a bright bouquet of iris, peony, and jasmine, anchored by a modern clean wood-musk base — effortlessly chic and powerful.",
     descriptionIt: "Una fragranza femminile sicura e radiosa. Pera fresca e agrumi si aprono a un bouquet di iris, peonia e gelsomino.",
     emoji: "💫",
-    image: `${imgNewFrag}You+Powerfully`,
+    image: imgFrag60,
     rating: 4.5,
     reviews: 167,
   },
@@ -1600,7 +1631,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una grande dichiarazione ambrata da Maison Francis Kurkdjian. Caldo, luminoso e avvolgente — un magistrale blend di benzoino, eliotropio e ricca vaniglia.",
     badge: "Ultra Luxury",
     emoji: "🌙",
-    image: `${imgNewFrag}Grand+Soir`,
+    image: imgFrag61,
     rating: 4.9,
     reviews: 234,
   },
@@ -1619,7 +1650,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una vibrante collisione tra i tropici esotici e l'Oriente antico. Maracuja e oud formano un duo improbabile ma assolutamente avvincente.",
     badge: "Niche",
     emoji: "🌴",
-    image: `${imgNewFrag}Oud+Maracuja`,
+    image: imgFrag62,
     rating: 4.7,
     reviews: 143,
   },
@@ -1638,7 +1669,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una magnifica fragranza all'oud dalla leggendaria maison Creed. Zafferano e bergamotto illuminano un cuore di oud laotiano e rosa bulgara.",
     badge: "Ultra Luxury",
     emoji: "👑",
-    image: `${imgNewFrag}Oud+Zarian`,
+    image: imgFrag63,
     rating: 4.9,
     reviews: 156,
   },
@@ -1657,7 +1688,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Osi? Una fragranza gourmand seducente e pericolosa costruita attorno a rum, caffè nero e cioccolato fondente.",
     badge: "Niche",
     emoji: "💀",
-    image: `${imgNewFrag}Black+Phantom`,
+    image: imgFrag64,
     rating: 4.8,
     reviews: 498,
   },
@@ -1676,7 +1707,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un floreale romantico e luminoso. Cattura il battito di un cuore accelerato con rosa, gelsomino e peonia su una base di sandalo e muschio.",
     badge: "Luxury",
     emoji: "❤️",
-    image: `${imgNewFrag}Coeur+Battant`,
+    image: imgFrag66,
     rating: 4.7,
     reviews: 175,
   },
@@ -1695,7 +1726,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Orage cattura l'elettricità di un temporale imminente. Foglia di viola scura e pepe nero su un cuore fresco di iris e vetiver.",
     badge: "Luxury",
     emoji: "⛈️",
-    image: `${imgNewFrag}Orage+LV`,
+    image: imgFrag67,
     rating: 4.7,
     reviews: 163,
   },
@@ -1714,7 +1745,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una fragranza maschile celeste e luminosa che attraversa i sensi come una stella cadente. Agrumi freschi e mela accendono un cuore floreale fresco.",
     badge: "Luxury",
     emoji: "☄️",
-    image: `${imgNewFrag}Meteore+LV`,
+    image: imgFrag68,
     rating: 4.7,
     reviews: 148,
   },
@@ -1733,7 +1764,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una fragranza di lusso imponente e complessa. Stratifica oud e cuoio pregiati con un'apertura citrica luminosa e una profonda base di sandalo resinoso.",
     badge: "Ultra Luxury",
     emoji: "🪵",
-    image: `${imgNewFrag}Richwood`,
+    image: imgFrag69,
     rating: 4.9,
     reviews: 112,
   },
@@ -1752,7 +1783,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una fragranza grandiosa come il suo nome. Luminosa ed elegante — bergamotto e rosa aprono il sipario su un finale di benzoino e sandalo.",
     badge: "Niche",
     emoji: "🎭",
-    image: `${imgNewFrag}Xerjoff+Opera`,
+    image: imgFrag70,
     rating: 4.8,
     reviews: 134,
   },
@@ -1771,7 +1802,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Una creazione Xerjoff splendidamente equilibrata. Un raffinato floreale-legnoso con cuore di rosa e magnolia.",
     badge: "Niche",
     emoji: "💌",
-    image: `${imgNewFrag}More+Than+Words`,
+    image: imgFrag71,
     rating: 4.7,
     reviews: 189,
   },
@@ -1790,7 +1821,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un'ode all'acuto alla bellezza. Colpisce ogni nota con precisione — agrumi brillanti, fiori luminosi e una sontuosa base ambra-vaniglia.",
     badge: "Niche",
     emoji: "🎵",
-    image: `${imgNewFrag}Soprano`,
+    image: imgFrag72,
     rating: 4.8,
     reviews: 98,
   },
@@ -1809,7 +1840,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "La capitale della fragranza di lusso. Audace e opulenta — zafferano e oud pregiati con un ricco cuore di rosa e profonda base ambra-patchouli.",
     badge: "Niche",
     emoji: "🏛️",
-    image: `${imgNewFrag}Capitale`,
+    image: imgFrag73,
     rating: 4.8,
     reviews: 127,
   },
@@ -1828,7 +1859,7 @@ const MORE_FRAGRANCES: Fragrance[] = [
     descriptionIt: "Un tuffo in profondità nel Mar Mediterraneo. Amplifica il DNA acquatico iconico con note minerali più scure, cipresso e una ricca base di patchouli.",
     badge: "Bestseller",
     emoji: "🌊",
-    image: `${imgNewFrag}Acqua+di+Gio+Profondo`,
+    image: imgFrag74,
     rating: 4.7,
     reviews: 834,
   },
