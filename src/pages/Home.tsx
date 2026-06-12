@@ -2421,6 +2421,33 @@ export default function Home() {
       ((import.meta as any).env?.VITE_SUPABASE_URL && (import.meta as any).env?.VITE_SUPABASE_ANON_KEY)
   );
   const [session, setSession] = useState<any>(null);
+  // Live pricing fetched from Supabase `products` table. Falls back to the
+  // hardcoded prices in FRAGRANCES/MORE_FRAGRANCES if Supabase is unreachable.
+  const [priceOverrides, setPriceOverrides] = useState<Record<number, Fragrance["sizes"]>>({});
+
+  useEffect(() => {
+    if (!supabaseReady) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data, error } = await supabase.from("products").select("id, sizes");
+        if (error || !data || cancelled) return;
+        const map: Record<number, Fragrance["sizes"]> = {};
+        for (const row of data as { id: number; sizes: Fragrance["sizes"] }[]) {
+          if (row && typeof row.id === "number" && Array.isArray(row.sizes)) {
+            map[row.id] = row.sizes;
+          }
+        }
+        setPriceOverrides(map);
+      } catch {
+        // ignore — keep static fallback prices
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [supabaseReady]);
+
   const [authEmail, setAuthEmail] = useState("");
   const [authPass, setAuthPass] = useState("");
   const [authLoading, setAuthLoading] = useState(false);
@@ -2679,7 +2706,13 @@ const BASE_ORDERS = 458;
     return () => window.removeEventListener("keydown", fn);
   }, []);
 
-  const ALL_FRAGRANCES = useMemo(() => [...FRAGRANCES, ...MORE_FRAGRANCES], []);
+  const ALL_FRAGRANCES = useMemo(() => {
+    const base = [...FRAGRANCES, ...MORE_FRAGRANCES];
+    if (Object.keys(priceOverrides).length === 0) return base;
+    return base.map((f) =>
+      priceOverrides[f.id] ? { ...f, sizes: priceOverrides[f.id] } : f
+    );
+  }, [priceOverrides]);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
