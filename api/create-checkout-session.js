@@ -4,6 +4,7 @@
  */
 
 import Stripe from 'stripe';
+import { getSupabaseAdmin } from './_supabase.js';
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const siteUrl = process.env.SITE_URL || process.env.VERCEL_URL;
@@ -118,6 +119,39 @@ export default async function handler(req, res) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify({ error: 'Cart is empty' }));
       return;
+    }
+
+    // Re-validate unit prices against the source of truth (Supabase `products`
+    // table) so a tampered client request can't pay less than the real price.
+    // Done BEFORE discounts are applied so discount math runs on correct base prices.
+    try {
+      const admin = getSupabaseAdmin();
+      const ids = [
+        ...new Set(
+          rawItems
+            .map((it) => Number(it.id))
+            .filter((n) => Number.isFinite(n))
+        ),
+      ];
+      if (ids.length) {
+        const { data: products, error: prodErr } = await admin
+          .from('products')
+          .select('id, sizes')
+          .in('id', ids);
+        if (!prodErr && Array.isArray(products)) {
+          const sizesById = new Map(products.map((p) => [p.id, p.sizes]));
+          for (const it of rawItems) {
+            const sizes = sizesById.get(Number(it.id));
+            if (!Array.isArray(sizes)) continue;
+            const match = sizes.find(
+              (s) => String(s.ml) === String(it.ml) && Boolean(s.full) === Boolean(it.isFull)
+            );
+            if (match) it.unitPriceEur = String(match.price);
+          }
+        }
+      }
+    } catch {
+      // Supabase not configured — keep client-provided prices (legacy behavior)
     }
 
     // Apply discount tiers
