@@ -2141,7 +2141,7 @@ function FragranceCard({
         <p style={{ color: "#777", fontSize: 11, lineHeight: 1.7, margin: "8px 0 12px", display: "-webkit-box", WebkitLineClamp: isMobile ? 3 : 4, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: isMobile ? 58 : 76 }}>{lang === "it" ? frag.descriptionIt : frag.description}</p>
 
         <div style={{ fontSize: 8, color: "#666", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6, fontWeight: 700 }}>
-          {lang === "it" ? "Taglie" : "الأحجام"}
+                          {lang === "it" ? "Taglie" : "Sizes"}
         </div>
 
         {/* Mobile: keep EVERYTHING small and visible in one row (no swipe). */}
@@ -2476,7 +2476,7 @@ export default function Home() {
       .map((s: string) => s.trim().toLowerCase())
       .filter(Boolean)
   );
-  // إذا لم تُحدد VITE_ADMIN_EMAILS، لا نفعل لوحة الإدارة
+  // If VITE_ADMIN_EMAILS is not set, the admin panel is disabled
   const isAdmin =
     isAdminEmails.size > 0 && isAdminEmails.has(String(session?.user?.email || "").trim().toLowerCase());
 
@@ -2634,7 +2634,7 @@ export default function Home() {
   }, []);
 
   const isThankYou = route.includes("/thank-you");
-  const isReceived = route.includes("/received") || route.includes("/tam-istilam");
+  const isReceived = route.includes("/received");
 
   const receivedParams = useMemo(() => {
     if (typeof window === "undefined") return { order: "", name: "" };
@@ -2936,7 +2936,7 @@ const BASE_ORDERS = 458;
                   onMouseDown={(e) => e.preventDefault()}
                 >
                   <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "#c9a96e88", fontSize: 9, letterSpacing: 3, textTransform: "uppercase", fontWeight: 800 }}>
-                    {lang === "it" ? "Suggerimenti" : "اقتراحات"}
+                                    {lang === "it" ? "Suggerimenti" : "Suggestions"}
                   </div>
                   {suggestions.map((s, idx) => (
                     <button
@@ -3228,23 +3228,23 @@ const BASE_ORDERS = 458;
             <div style={{ maxWidth: 760, margin: "0 auto" }}>
               {(isThankYou || isReceived) && (
                 <div style={{ background: "linear-gradient(135deg, rgba(34,197,94,0.12), rgba(201,169,110,0.08))", border: "1px solid rgba(34,197,94,0.22)", borderRadius: 18, padding: isMobile ? 16 : 22, marginBottom: 14 }}>
-                  <div style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 22 : 28, color: "#eaf7ee", marginBottom: 6 }}>{lang === "it" ? "Ordine ricevuto" : "تم الاستلام"}</div>
+                  <div style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 22 : 28, color: "#eaf7ee", marginBottom: 6 }}>{lang === "it" ? "Ordine ricevuto" : "Order received"}</div>
                   <div style={{ color: "#9fb9a8", fontSize: 13, lineHeight: 1.8 }}>
                     {lang === "it"
                       ? "Grazie! Abbiamo ricevuto il tuo ordine."
-                      : "شكراً لك! تم استلام طلبك بنجاح."}
+                      : "Thank you! Your order has been received."}
                   </div>
 
                   {(receivedParams.order || receivedParams.name) && (
                     <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10 }}>
                       <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 14, padding: 12 }}>
-                        <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#6aa58a", fontWeight: 800 }}>{lang === "it" ? "Numero ordine" : "رقم الطلب"}</div>
+                        <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#6aa58a", fontWeight: 800 }}>{lang === "it" ? "Numero ordine" : "Order number"}</div>
                         <div style={{ marginTop: 6, fontSize: 16, color: "#eaf7ee", fontWeight: 900, fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }}>
                           {receivedParams.order || (lang === "it" ? "—" : "—")}
                         </div>
                       </div>
                       <div style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 14, padding: 12 }}>
-                        <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#6aa58a", fontWeight: 800 }}>{lang === "it" ? "Cliente" : "اسم العميل"}</div>
+                        <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#6aa58a", fontWeight: 800 }}>{lang === "it" ? "Cliente" : "Customer"}</div>
                         <div style={{ marginTop: 6, fontSize: 16, color: "#eaf7ee", fontWeight: 900 }}>
                           {receivedParams.name || (lang === "it" ? "—" : "—")}
                         </div>
@@ -3255,8 +3255,8 @@ const BASE_ORDERS = 458;
                   {isReceived && !(receivedParams.order || receivedParams.name) && (
                     <div style={{ marginTop: 12, color: "#7aa996", fontSize: 12, lineHeight: 1.8 }}>
                       {lang === "it"
-                        ? "Suggerimento: configura Shopify per reindirizzare a questa pagina con ?order=...&name=..."
-                        : "ملاحظة: تحتاج إعداد Shopify ليُرجعك لهذه الصفحة مع ?order=...&name=..."}
+                        ? "Il tuo numero d'ordine apparirà qui dopo il pagamento."
+                        : "Your order number will appear here after checkout."}
                     </div>
                   )}
                 </div>
