@@ -2023,7 +2023,7 @@ function FragranceCard({
         transition: "all 0.3s",
         display: "flex",
         flexDirection: "column",
-        alignSelf: "start",
+        height: "100%",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.border = "1px solid #c9a96e33";
@@ -3151,13 +3151,9 @@ const BASE_ORDERS = 458;
                   </div>
                 </div>
               </div>
-              <div style={{ display: "flex", gap: isMobile ? 10 : isTablet ? 16 : 20, alignItems: "flex-start" }}>
-                {Array.from({ length: cols }).map((_, colIndex) => (
-                  <div key={colIndex} style={{ flex: 1, display: "flex", flexDirection: "column", gap: isMobile ? 10 : isTablet ? 16 : 20 }}>
-                    {filtered.filter((_, i) => i % cols === colIndex).map((f) => (
-                      <FragranceCard key={f.id} frag={f} onAdd={addToCart} cart={cart} cols={cols} lang={lang} />
-                    ))}
-                  </div>
+              <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: isMobile ? 10 : isTablet ? 16 : 20, alignItems: "stretch" }}>
+                {filtered.map((f) => (
+                  <FragranceCard key={f.id} frag={f} onAdd={addToCart} cart={cart} cols={cols} lang={lang} />
                 ))}
               </div>
             </>
